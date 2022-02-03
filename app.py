@@ -28,7 +28,7 @@ st.write("Dataset: ",choose_dataset)
 @st.cache(allow_output_mutation=True)
 
 def load_feature_vectors():
-    path_dataset = "VGG_16_4096d_features.npy"
+    path_dataset = "ResNet.npy"
     path = os.path.join(os.getcwd(),'data','dataset', 'oxford5k',path_dataset)
 
     with open(path,"rb") as f:
@@ -36,7 +36,7 @@ def load_feature_vectors():
     return f_data
 
 def load_kmeans():
-    path_kmeans = "Kmean_vgg16_4096d.pkl"
+    path_kmeans = "Kmean.pkl"
     path = os.path.join(os.getcwd(),'data','dataset','oxford5k',path_kmeans)
     with open(path,"rb") as f:
         kmeans = pickle.load(f)
